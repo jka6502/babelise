@@ -116,7 +116,7 @@ describe('babelise', () => {
 });
 
 
-describe('once initialised', function() {
+describe('once initialised', () => {
 
 	it('should make friends and influence people', () => {
 		var [a, b] = [1, 7];
