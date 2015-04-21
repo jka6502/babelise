@@ -1,8 +1,16 @@
 {
   "name": "babelise",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "James Andrews <jka6502@gmail.com>",
-  "description": "Enable Babel transpiling and ES6 modules in ES5 browsers",
+  "description": "Simplify Babel and ES5 module usage in the browser",
+  "keywords": [
+    "babel",
+    "es6",
+    "es7",
+    "ecmascript",
+    "harmony",
+    "module"
+  ],
   "scripts": {
     "test": "./node_modules/testem/testem.js -f test/testem.yml -l PhantomJS"
   },
@@ -18,5 +26,14 @@
     "mocha": "1.x.x",
     "should": "4.x.x",
     "testem": "0.8.x"
-  }
+  },
+  "main": "babelise.js",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://jka6502.github.com/jka6502/babelise.git"
+  },
+  "license": "MIT"
 }

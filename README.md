@@ -15,7 +15,7 @@ and some EcmaScript 7 functionality, right now, in EcmaScript 5 compliant
 browsers!
 
 Of course, all the hard work has been achieved by the authors of the
-aforementioned projects - babelise just makes it a teensy bit easier to use.
+aforementioned projects - babelise just makes it that teensy bit easier to use.
 
 
 ## Usage
@@ -48,12 +48,13 @@ shim uses XMLHttpRequest - so `file:` url's cannot be used).  Something like
 
 Open your web browser, visit the page, and witness the future!
 
+
 ## Additional options
 
 Options can be supplied to `babelise` as url parameters in the script tag.
 
 ```html
-<script src='node_modules/babelise/babelise.js?experimental=true'></script>
+<script src='node_modules/babelise/babelise.js?stage=1'></script>
 
 <script type='module'>
 	async function procrastinate() {
@@ -70,6 +71,8 @@ The following options may be supplied:
 
 * base - The base url or path that the required npm modules are exposed on.
 * stage - Select an experimental stage, to enable a subset of Babel features.
+
+By default, stage 0 and above will be enabled - so all features are available.
 
 
 ## Running the test suite
