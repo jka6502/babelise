@@ -1,0 +1,22 @@
+{
+  "name": "babelise",
+  "version": "1.0.0",
+  "author": "James Andrews <jka6502@gmail.com>",
+  "description": "Enable Babel transpiling and ES6 modules in ES5 browsers",
+  "scripts": {
+    "test": "./node_modules/testem/testem.js -f test/testem.yml -l PhantomJS"
+  },
+  "dependencies": {
+    "babel-core": "5.x.x",
+    "es6-module-loader": "0.16.x",
+    "systemjs": "0.16.x"
+  },
+  "engines": {
+    "node": ">=0.6"
+  },
+  "devDependencies": {
+    "mocha": "1.x.x",
+    "should": "4.x.x",
+    "testem": "0.8.x"
+  }
+}
