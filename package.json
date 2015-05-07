@@ -1,6 +1,6 @@
 {
   "name": "babelise",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "author": "James Andrews <jka6502@gmail.com>",
   "description": "Simplify Babel and ES5 module usage in the browser",
   "keywords": [
@@ -33,7 +33,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://jka6502.github.com/jka6502/babelise.git"
+    "url": "https://www.github.com/jka6502/babelise.git"
   },
   "license": "MIT"
 }

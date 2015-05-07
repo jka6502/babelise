@@ -10,7 +10,6 @@
 
 		<script src="/testem/mocha.js"></script>
 		<script src="/testem.js"></script>
-		<script src="/node_modules/should/should.min.js"></script>
 		<script>mocha.setup('bdd')</script>
 
 		<script src='../babelise.js'></script>
@@ -21,14 +20,25 @@
 			files.push('{{{src}}}');
 			{{/serve_files}}
 
+			System.baseURL = '/';
+
 			files = files.map(function(filename) {
-				// Strip 'test/' prefix and '.js' suffix from filename
-				return filename.substring(5, filename.length - 3);
+				// Strip '.js' suffix from filename
+				return filename.substring(0, filename.length - 3);
 			});
 
-			System.import.apply(System, files).then(function() {
-				mocha.run();
-			});
+			var index = 0;
+
+			function importNext() {
+				if (index >= files.length) {
+					mocha.run();
+				}else{
+					System.import(files[index++]).then(importNext);
+				}
+			}
+
+			importNext();
+
 
 		</script>
 

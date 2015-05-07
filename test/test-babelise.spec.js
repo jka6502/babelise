@@ -1,5 +1,5 @@
 import { testImport } from 'es6-import';
-
+import should from '../node_modules/should/should.min';
 
 /**
  * A mock Document, for options testing.
