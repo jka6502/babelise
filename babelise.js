@@ -5,7 +5,7 @@
 		element			= elements[elements.length - 1],
 		url				= element.src;
 		index			= url.lastIndexOf('/'),
-		base			= url.substring(0, index) + '/node_modules',
+		base			= '/node_modules',
 		paramStart		= url.indexOf('?'),
 		systemConfig	= '',
 		stage			= 0;
@@ -27,8 +27,8 @@
 		}
 
 		// Support for node >=4 flat node_modules file system.
-		if (params.flat) {
-			base = '/node_modules';
+		if (params.noflat) {
+			base = url.substring(0, index) + '/node_modules';
 		}
 
 

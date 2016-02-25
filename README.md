@@ -2,14 +2,7 @@
 
 Babelise your browser code, automagically!
 
-**NOTE**: As of node >= 4, the included npm creates a flat `node_modules`
-structure, so the `flat` page parameter must be supplied to work correctly:
-
-``` html
-<script src='./node_modules/babelise/bablise.js?flat'></script>
-```
-
-Additionally, babel 6 does not support dynamic transpilation in the browser,
+**NOTE**: Babel 6 does not support dynamic transpilation in the browser,
 so babelise is restricted to babel 5 until I can find an alternative approach.
 
 Babelise injects the required scripts and configuration from the
@@ -81,7 +74,7 @@ The following options may be supplied:
 
 * base - The base url or path that the required npm modules are exposed on.
 * stage - Select an experimental stage, to enable a subset of Babel features.
-* flat - Expect a flat `node_modules` structure, required in node.js >= 4.
+* noflat - Expect old, pre Node 4 recursive `node_modules` structure.
 
 By default, stage 0 and above will be enabled - so all features are available.
 
