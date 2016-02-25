@@ -12,15 +12,25 @@
 
 	if (paramStart !== -1) {
 		var params = {};
-		url.substring(paramStart + 1).split(',').forEach(function(value) {
+		url.substring(paramStart + 1).split('&').forEach(function(value) {
 			var components = value.split('=');
-			params[decodeURIComponent(components[0].trim())]
-				= decodeURIComponent((components[1] || '').trim());
+			if (components.length > 1) {
+				params[decodeURIComponent(components[0].trim())]
+					= decodeURIComponent((components[1] || '').trim());
+			}else{
+				params[decodeURIComponent(components[0].trim())] = true;
+			}
 		});
 
 		if (params.base) {
 			base = params.base;
 		}
+
+		// Support for node >=4 flat node_modules file system.
+		if (params.flat) {
+			base = '/node_modules';
+		}
+
 
 		stage = params.stage || 0;
 	}
