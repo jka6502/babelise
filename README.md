@@ -2,8 +2,17 @@
 
 Babelise your browser code, automagically!
 
-**NOTE**: Babel 6 does not support dynamic transpilation in the browser,
-so babelise is restricted to babel 5 until I can find an alternative approach.
+- Version 3: Upgraded `systemjs` and `es6-module-loader` dependencies to latest
+versions.  This is a breaking change, as module suffixes are now required, but
+plugin support is far superior as a consequence.
+
+- Version 2: Default to expecting flat `node_modules` file system, for support of
+recent Node and NPM versions.
+
+
+> **NOTE**: Babel 6 does not support dynamic transpilation in the browser,
+> so babelise is restricted to babel 5 until I can find an alternative approach.
+
 
 Babelise injects the required scripts and configuration from the
 [Babel](http://babeljs.io/) project, allowing transpiling of ES6+ to ES5,
@@ -67,7 +76,7 @@ Options can be supplied to `babelise` as url parameters in the script tag.
 
 	procrastinate();
 	console.log('The thing is not done yet...');
-</script>	
+</script>
 ```
 
 The following options may be supplied:

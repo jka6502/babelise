@@ -1,5 +1,14 @@
-import { testImport } from 'es6-import';
-import should from '../node_modules/should/should.min';
+import { testImport } from './es6-import.js';
+import should from '../node_modules/should/should.min.js';
+
+
+// Enable text loading plugin for systemjs, to get babelise source.
+System.config({
+	map: {
+		text: '../node_modules/system-text/text.js'
+	}
+});
+
 
 /**
  * A mock Document, for options testing.
@@ -60,8 +69,8 @@ describe('babelise', () => {
 	before((done) => {
 		var moc = new Mocument({});
 		moc.use(() => {
-			return System.load('../babelise').then((module) => {
-				babelise = new Function(module.source);
+			return System.import('../babelise.js!text').then((source) => {
+				babelise = new Function(source);
 				done();
 			});
 		});
@@ -152,7 +161,7 @@ describe('once initialised', () => {
 		var a = 2;
 
 		async function procrastinate() {
-			a = await System.import('es6-import');
+			a = await System.import('./es6-import.js');
 			a.testImport.should.equal('Success!');
 			done();
 		}
@@ -164,4 +173,3 @@ describe('once initialised', () => {
 
 
 });
-

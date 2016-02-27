@@ -14,18 +14,13 @@
 
 		<script src='../babelise.js'></script>
 
-		<script type='module'>
+		<script>
 			var files = [];
 			{{#serve_files}}
 			files.push('{{{src}}}');
 			{{/serve_files}}
 
 			System.baseURL = '/';
-
-			files = files.map(function(filename) {
-				// Strip '.js' suffix from filename
-				return filename.substring(0, filename.length - 3);
-			});
 
 			var index = 0;
 
@@ -38,8 +33,6 @@
 			}
 
 			importNext();
-
-
 		</script>
 
 	</head>

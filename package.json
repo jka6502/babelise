@@ -1,6 +1,6 @@
 {
   "name": "babelise",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "author": "James Andrews <jka6502@gmail.com>",
   "description": "Simplify Babel and ES5 module usage in the browser",
   "keywords": [
@@ -16,8 +16,8 @@
   },
   "dependencies": {
     "babel-core": "5.1.x",
-    "es6-module-loader": "0.16.x",
-    "systemjs": "0.16.x"
+    "es6-module-loader": "^0.17.11",
+    "systemjs": "^0.19.23"
   },
   "engines": {
     "node": ">=4"
@@ -25,6 +25,7 @@
   "devDependencies": {
     "mocha": "1.x.x",
     "should": "4.x.x",
+    "system-text": "^0.1.0",
     "testem": "0.8.x"
   },
   "main": "babelise.js",
